@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: file-frontend-image:latest  
+    container_name: file-frontend  
+    ports:
+      - "3000:80"  
+    networks:
+      - my_network
+
+networks:
+  my_network:
